@@ -1,0 +1,30 @@
+# 数据集路径
+DATASET_DIR = 'imgs'
+TRAIN_CSV = 'imgs/train.csv'
+TEST_CSV = 'imgs/val.csv'
+
+# 数据预处理参数
+BLOCK_NUM = 3
+IMAGE_SIZE = 255
+MEAN = [0.485, 0.456, 0.406]
+STD = [0.229, 0.224, 0.225]
+
+# 训练参数
+BATCH_SIZE = 64
+LR = 0.0001
+NUM_EPOCHS = 100
+GRADIENT_CLIP = 5.0
+
+# 模型参数
+BACKBONE = 'resnet18'
+EMBED_DIM = 512
+NUM_HEADS = 8
+NUM_TRANSFORMER_LAYERS = 6
+
+# Agent参数
+EPISODES = 1000
+GAMMA = 0.99
+EPSILON = 0.5
+EPSILON_DECAY = 0.9999
+EPSILON_MIN = 0.1
+AGENT_LR = 0.001 
