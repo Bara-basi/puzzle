@@ -7,6 +7,7 @@ from collections import defaultdict
 from config import *
 import tqdm
 
+
 vector = np.array(([1,0],[-1,0],[0,-1],[0,1]))
 class PuzzleEnv:
     def __init__(self, state, goal):

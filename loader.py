@@ -31,7 +31,7 @@ class PuzzleDataset(Dataset):
         blocks = []
         for i in range(BLOCK_NUM):
             for j in range(BLOCK_NUM):
-                block = img.crop((j*block_size_w,i*block_size_h,(j+1)*block_size_w,(i+1)*block_size_h)) #crop函数的作用是裁剪图像，255*255的图像这样裁剪会报错
+                block = img.crop((j*block_size_w,i*block_size_h,(j+1)*block_size_w,(i+1)*block_size_h))
                 blocks.append(block)
         # 打乱顺序,blocks和positions的顺序一致相同
         index = list(range(BLOCK_NUM*BLOCK_NUM))

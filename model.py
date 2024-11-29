@@ -8,7 +8,7 @@ class PuzzleNet(nn.Module):
         super(PuzzleNet, self).__init__()
 
         self.feature_extractor = models.__dict__[BACKBONE](pretrained=True)
-        self.feature_extractor.fc = nn.Identity()
+        self.feature_extractor.fc = nn.Identity() # 将全连接层去掉
 
         self.pos_embedding = nn.Parameter(torch.randn(9,EMBED_DIM))
 
@@ -22,7 +22,7 @@ class PuzzleNet(nn.Module):
         self.prediction_head = nn.Sequential(
             nn.Linear(EMBED_DIM,256),
             nn.ReLU(),
-            nn.Dropout(0.1),
+            nn.Dropout(0.5),
             nn.Linear(256,9)
         )
     
